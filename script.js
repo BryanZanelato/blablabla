@@ -1,23 +1,23 @@
 function adicionarAluno() {
-    // Obtendo os valores do formulário
+
     var nome = document.getElementById('nome').value;
     var matricula = document.getElementById('matricula').value;
     var nota1 = parseFloat(document.getElementById('nota1').value);
     var nota2 = parseFloat(document.getElementById('nota2').value);
 
-    // Verificando se as notas estão dentro do limite
+    
     if (nota1 > 10 || nota2 > 10) {
         alert('As notas devem ser no máximo 10.');
         return;
     }
 
-    // Calculando a média
+    
     var media = (nota1 + nota2) / 2;
 
-    // Determinando o status
+    
     var status = media >= 7 ? 'Aprovado' : 'Reprovado';
 
-    // Adicionando a nova linha na tabela
+    
     var tabela = document.getElementById('tabelaAlunos').getElementsByTagName('tbody')[0];
     var novaLinha = tabela.insertRow();
 
@@ -35,6 +35,6 @@ function adicionarAluno() {
     celulaMedia.innerHTML = media.toFixed(2);
     celulaStatus.innerHTML = status;
 
-    // Limpando o formulário
+
     document.getElementById('notasForm').reset();
 }
